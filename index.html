@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Love You Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .love {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    .heart {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      background: url("heart.png") no-repeat center;
+      background-size: contain;
+      box-sizing: border-box;
+    }
+
+    .text {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #e91e63;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="love" id="love"></div>
+  <div class="text">I Love You</div>
+
+  <script>
+    const heartPositions = [
+      [3,0],[4,0],[8,0],[9,0],
+      [2,1],[5,1],[7,1],[10,1],
+      [1,2],[6,2],[11,2],
+      [0,3],[12,3],
+      [0,4],[12,4],
+      [1,5],[11,5],
+      [2,6],[10,6],
+      [3,7],[9,7],
+      [4,8],[8,8],
+      [5,9],[7,9],
+      [6,10]
+    ];
+
+    const container = document.getElementById('love');
+    const size = 20;
+
+    heartPositions.forEach(([x, y]) => {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = `${x * size}px`;
+      heart.style.top = `${y * size}px`;
+      container.appendChild(heart);
+    });
+  </script>
+</body>
+</html>
