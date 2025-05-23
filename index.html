@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Te amo ❤️</title>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    #love-button {
+      padding: 16px 32px;
+      font-size: 24px;
+      border: none;
+      background-color: #ff5e8e;
+      color: white;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      z-index: 2;
+    }
+
+    #love-button:hover {
+      transform: scale(1.1);
+    }
+
+    .arrow {
+      margin-top: 20px;
+      font-size: 40px;
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    #cute-img {
+      margin-top: 40px;
+      width: 200px;
+      display: none;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+  <button id="love-button">Te amo ❤️</button>
+  <div class="arrow">⬇️</div>
+  <img id="cute-img" src="heart.png" alt="fofura" />
+
+  <script>
+    const button = document.getElementById("love-button");
+    const img = document.getElementById("cute-img");
+    const arrow = document.querySelector(".arrow");
+
+    button.addEventListener("click", () => {
+      img.style.display = "block";
+      arrow.style.display = "none";
+      button.disabled = true;
+      button.innerText = "💖";
+    });
+  </script>
+</body>
+</html>
